@@ -9,11 +9,11 @@ A fim de obter um dataset unificado, executar as etapas abaixo:
 
 1. **Recuperar os datasets originais** [do MIXEX, seção "Data"](https://www.musicir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
 
-
-Colocá-los na pasta do reposítório. TODO: verificar pequenas modificações manuais feitas nos datasets antes de executar o algoritmo. Houve uniformização manual do nome das pastas.
+    Colocá-los na pasta do reposítório. TODO: verificar pequenas modificações manuais feitas nos datasets antes de executar o algoritmo. Houve uniformização manual do nome das pastas.
 
 
 2. **Executar o arquivo de uniformização/unificação `normalize.py`**
+
    Este comando gera uma pasta contendo as queries, outra as músicas (pasta songs).
    Gera também os seguintes arquivos:
 	- *expected_results.list*  - Contém uma lista que relaciona cada query com o nome (sem extensão) esperado da música dos datasets unificados.
@@ -37,4 +37,5 @@ Colocá-los na pasta do reposítório. TODO: verificar pequenas modificações m
         As músicas convertidas ficarão na pasta `songs_wav.`
 
 4. **(Não feito) Adicionar músicas de ruído na pasta de músicas**
-   Para aumentar o dataset e verificar se o algoritmo está funcionando em boa velocidade e acurácia.
+
+    Para aumentar o dataset e verificar se o algoritmo está funcionando em boa velocidade e acurácia.
