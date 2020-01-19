@@ -1,7 +1,8 @@
 # Uniformização/Unificação dos datasets
 
 Pega os datasets IOACAR e MIR e os "mergeia" em um.
-**Importante:** **Para o algoritmo funcionar**, é preciso ter os dois datasets dentro dessa pasta para o código funcionar. Estes não estão disponibizados neste repositório devido a direitos autorais. Ambos podem ser recuperados do site [MIREX](https://www.music-ir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
+
+**Importante:** Para o algoritmo funcionar, é preciso ter os dois datasets dentro dessa pasta para o código funcionar. Estes não estão disponibizados neste repositório devido a direitos autorais. Ambos podem ser recuperados do site [MIREX](https://www.music-ir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
 
 
 ## Etapas:
