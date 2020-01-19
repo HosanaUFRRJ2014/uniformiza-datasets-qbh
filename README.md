@@ -1,6 +1,6 @@
 # Uniformização/Unificação dos datasets
 
-Pega os datasets IOACAR e MIR e os "mergeia" em um.
+Pega os datasets IOACAS e MIR e os "mergeia" em um.
 
 Este algoritmo precede a execução de [lsh](https://github.com/HosanaUFRRJ2014/lsh).
 
