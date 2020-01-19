@@ -24,7 +24,7 @@ A fim de obter um dataset unificado, executar as etapas abaixo:
 	- *mir_query_correlation_file.list* - Relaciona os nomes das queries do dataset unificado com os do dataset MIR.
 	- *mir_song_correlation_file.list* - Relaciona os nomes das músicas do dataset unificado com os do dataset MIR.
   
-3. **Transformar das queries do formato MID para WAV.**
+3. **Transformar as queries do formato MID para WAV.**
 
    1. Instalar, em seu Sistema Operacional, o programa Timidity.
 	```
