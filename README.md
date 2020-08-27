@@ -5,7 +5,7 @@ Pega os datasets IOACAS e MIR e os "mergeia" em um.
 Este algoritmo precede a execução de [lsh](https://github.com/HosanaUFRRJ2014/lsh).
 
 
-**Importante:** Para o algoritmo funcionar, é preciso ter os dois datasets dentro dessa pasta para o código funcionar. Estes não estão disponibizados neste repositório devido a direitos autorais. Ambos podem ser recuperados do site [MIREX](https://www.music-ir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
+**Importante:** Para o algoritmo funcionar, é preciso ter os três datasets dentro da pasta deste repositório para o código funcionar. Estes não estão disponibizados neste repositório devido a direitos autorais. Dois deles, podem ser recuperados do site [MIREX](https://www.music-ir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data). O terceiro dataset, o dataset de ruído, pode ser encontrado em [The Lakh MIDI Dataset v0.1](https://colinraffel.com/projects/lmd/) (Baixar o dataset LMD-matched). 
 
 
 ## Etapas:
@@ -29,17 +29,23 @@ A fim de obter um dataset unificado, executar as etapas abaixo:
   
 3. **Transformar as queries do formato MID para WAV.**
 
-   1. Instalar, em seu Sistema Operacional, o programa Timidity.
+   3.1. Instalar, em seu Sistema Operacional, o programa Timidity.
 	```
 		sudo apt update
 		sudo apt install timidity  # funciona no Ubuntu 18.04
 	```
 
-   2. Executar o arquivo `convert_midi_to_wav.py`
+   3.2. Executar o arquivo `convert_midi_to_wav.py`
         Este passo é necessário pois as bibliotecas Python de extração de feature não funcionam para arquivos do formato MID.
         Ao menos, no momento da criação deste repositório, não havia biblioteca Python que o fizesse.
         As músicas convertidas ficarão na pasta `songs_wav.`
 
-4. **(Não feito) Adicionar músicas de ruído na pasta de músicas**
+4. ** Adicionar músicas de ruído na pasta de músicas**
 
     Para aumentar o dataset e verificar se o algoritmo está funcionando em boa velocidade e acurácia.
+
+	4.1. Criar lista das músicas presentes no dataset de ruído
+	```
+		grep .*[\.mid]$ -r -l | sort > midi.list
+
+	```

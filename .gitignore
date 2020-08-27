@@ -1,5 +1,10 @@
 IOACAS_QBH/*
 MIR-QBSH-corpus/*
+lmd_matched/*
 queries/*
 songs/*
 songs_wav/*
+
+\.vscode/
+
+*.pyc

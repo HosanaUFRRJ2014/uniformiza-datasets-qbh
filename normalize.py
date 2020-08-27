@@ -1,35 +1,18 @@
 import subprocess
 
+from utils import (
+    generate_name,
+    build_command,
+    get_result_name
+)
 
-def generate_name(id):
-    '''
-    Generates a filename adding at most six left zeros.
-    e.g: 000001 , 000045, etc
-    '''
-    max_zero_amount = 6
-    str_id = str(id)
-    amount_of_zeros = '0' * (max_zero_amount - len(str_id))
-    return '{}{}'.format(amount_of_zeros, id)
-
-
-def build_command(old_path, new_path):
-    return 'cp {} {}'.format(old_path, new_path)
+__all__ = ["normalize"]
 
 
 def write_correlation(file, old_path, new_file):
     file.write('{}\t{}\n'.format(old_path, new_file))
 
 
-def get_result(repo_path, query):
-    result = {
-        'MIR-QBSH-corpus/': query.split('/')[-1].replace('.wav', ''),
-        'IOACAS_QBH/': query.split('/')[-1].replace('.wav', '')
-    }
-
-    return result[repo_path]
-
-
-# FIXME: MIR não está listando todas as músicas
 def normalize_songs(correlation_file, repo_path, songs_list, last_index=0):
     commands = []
     song_name_mapping = {}
@@ -78,7 +61,7 @@ def normalize_queries(
         )
 
         # Results
-        result = get_result(repo_path, query)
+        result = get_result_name(repo_path, query)
         expected_results_file.write(
             'queries/{}.wav\t{}\n'.format(new_file_name, song_mapping[result])
         )
@@ -91,7 +74,7 @@ def normalize_queries(
     return id, commands
 
 
-def main():
+def normalize():
     mir_path = 'MIR-QBSH-corpus/'
     ioacas_path = 'IOACAS_QBH/'
 
@@ -100,22 +83,22 @@ def main():
     mir_song_mapping = {}
     ioacas_song_mapping = {}
 
-    mir_songs_path = '{}midi.list'.format(mir_path)
-    ioacas_songs_path = '{}midi.list'.format(ioacas_path)
+    mir_songs_filepath = '{}midi.list'.format(mir_path)
+    ioacas_songs_filepath = '{}midi.list'.format(ioacas_path)
 
-    mir_queries_path = '{}query-wav.list'.format(mir_path)
-    ioacas_queries_path = '{}query.list'.format(ioacas_path)
+    mir_queries_filepath = '{}query-wav.list'.format(mir_path)
+    ioacas_queries_filepath = '{}query.list'.format(ioacas_path)
 
-    with open(mir_songs_path, 'r') as ms:
+    with open(mir_songs_filepath, 'r') as ms:
         mir_song_list = ms.readlines()
 
-    with open(ioacas_songs_path, 'r') as _is:
+    with open(ioacas_songs_filepath, 'r') as _is:
         ioacas_song_list = _is.readlines()
 
-    with open(mir_queries_path, 'r') as mq:
+    with open(mir_queries_filepath, 'r') as mq:
         mir_query_list = mq.readlines()
 
-    with open(ioacas_queries_path, 'r') as iq:
+    with open(ioacas_queries_filepath, 'r') as iq:
         ioacas_query_list = iq.readlines()
 
     # Saves the relationship between queries of the real dataset and
@@ -153,10 +136,11 @@ def main():
     )
     commands.extend(_commands)
 
+    # Generates unified midi songs list file
+    commands.append("ls songs/ > midi_songs.list")
+
     # Execute copy commands
     print('Copying files...')
     for command in commands:
         # print command
         subprocess.run(command, shell=True)
-
-main()
