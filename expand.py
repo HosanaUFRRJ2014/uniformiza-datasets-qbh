@@ -72,7 +72,7 @@ def expand():
     # Saves the relationship between queries of the real dataset and
     # of the proposed dataset
     lmd_song_correlation_file = open('lmd_song_correlation_file.list', 'w') 
-    lmd_midi_list_file = open( 'midi_songs_expanse.list', 'w')   
+    lmd_midi_list_file = open('midi_songs_expanse.list', 'w')   
 
     last_index = get_last_index()
 
