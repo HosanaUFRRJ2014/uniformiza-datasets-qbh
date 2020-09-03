@@ -8,3 +8,5 @@ songs_wav/*
 \.vscode/
 
 *.pyc
+
+unexpanded_songs_wav/

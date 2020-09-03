@@ -20,8 +20,7 @@ def process_args():
 
     default_normalize = True
     default_expand = True
-    default_convert = "all"
-
+    default_convert = "none"
 
     parser.add_argument(
         "--normalize_datasets",
