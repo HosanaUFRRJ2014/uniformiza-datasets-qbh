@@ -12,12 +12,14 @@ Este algoritmo precede a execução de [lsh](https://github.com/HosanaUFRRJ2014/
 A fim de obter um dataset unificado, executar as etapas abaixo:
 Para ajuda via comando, consulte `python main.py --help`
 
-1. **Recuperar os datasets originais** [do MIXEX, seção "Data"](https://www.musicir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
+1. **Renomear pasta deste repositório para `uniformiza_datasets`**
+
+2. **Recuperar os datasets originais** [do MIXEX, seção "Data"](https://www.musicir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
 
     Colocá-los na pasta do reposítório. TODO: verificar pequenas modificações manuais feitas nos datasets antes de executar o algoritmo. Houve uniformização manual do nome das pastas.
 
 
-2. **Executar a uniformização/unificação**
+3. **Executar a uniformização/unificação**
 
 		python main.py -norm True -expand False
 	
@@ -31,7 +33,7 @@ Para ajuda via comando, consulte `python main.py --help`
 	- *mir_song_correlation_file.list* - Relaciona os nomes das músicas do dataset unificado com os do dataset MIR.
   
 
-3. **Adicionar músicas de ruído na pasta de músicas**
+4. **Adicionar músicas de ruído na pasta de músicas**
 
     Para aumentar o dataset e verificar se o algoritmo está funcionando em boa velocidade e acurácia.
 
@@ -45,15 +47,15 @@ Para ajuda via comando, consulte `python main.py --help`
 		python main.py -norm False -expand True
 
 
-4. **(Opcional) Transformar as queries do formato MID para WAV.**
+5. **(Opcional) Transformar as queries do formato MID para WAV.**
 
-   4.1. Instalar, em seu Sistema Operacional, o programa Timidity.
+   5.1. Instalar, em seu Sistema Operacional, o programa Timidity.
 	
 		sudo apt update
 		sudo apt install timidity  # funciona no Ubuntu 18.04
 	
 
-   4.2. Executar a conversão
+   5.2. Executar a conversão
 
    		
    		python main.py -norm False -expand False -convert $CONVERSION_OPTION
