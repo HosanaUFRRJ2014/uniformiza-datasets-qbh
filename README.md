@@ -12,7 +12,7 @@ Este algoritmo precede a execução de [lsh](https://github.com/HosanaUFRRJ2014/
 A fim de obter um dataset unificado, executar as etapas abaixo:
 Para ajuda via comando, consulte `python main.py --help`
 
-1. **Renomear pasta deste repositório para `uniformiza_datasets`**
+1. **Renomear pasta deste repositório para `uniformiza_dataset`**
 
 2. **Recuperar os datasets originais** [do MIXEX, seção "Data"](https://www.musicir.org/mirex/wiki/2019:Query_by_Singing/Humming#Data).
 
