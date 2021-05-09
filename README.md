@@ -37,12 +37,12 @@ Para ajuda via comando, consulte `python main.py --help`
 
     Para aumentar o dataset e verificar se o algoritmo está funcionando em boa velocidade e acurácia.
 
-	3.1. Criar lista das músicas presentes no dataset de ruído
+	4.1. Criar lista das músicas presentes no dataset de ruído
 	
 		grep .*[\.mid]$ -r -l | sort > midi.list
 	
 
-	3.2. Executar comando de expansão do dataset
+	4.2. Executar comando de expansão do dataset
 
 		python main.py -norm False -expand True
 
@@ -61,7 +61,7 @@ Para ajuda via comando, consulte `python main.py --help`
    		python main.py -norm False -expand False -convert $CONVERSION_OPTION
    		
 		CONVERSION_OPTION válidos:
-			- "only_mirex" - converte apenas os datasets e IOACAS do MIREX.
+			- "only_mirex" - converte apenas os datasets MIR_QBSH e IOACAS do MIREX.
 			- "only_lmd" - converte apenas o datasets vindo do LMD
 			- "all" - converte todos os três datasets envolvidos
 			- "none" - não converte nenhum dataset (opção padrão)
